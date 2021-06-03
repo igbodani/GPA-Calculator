@@ -3,7 +3,7 @@ package edu.isu.cs.student.project;
 public class Course{
     private String name;
     private int credit;
-    private String  grade;
+    private String grade;
 
     public Course(String name, int credit, String grade) {
         this.name = name;
@@ -20,49 +20,33 @@ public class Course{
     }
 
     public double getGrade() {
-        if(grade.equals("A")){
-            return  4.0;
-        }
-        else if(grade.equals("A-")){
-            return  3.70;
-        }
-        else if(grade.equals("B+")){
-            return  3.30;
-        }
-        else if(grade.equals("B")){
-            return 3.00;
-        }
-        else if(grade.equals("B-")){
-            return 2.70;
-        }
-        else if(grade.equals("C+")){
-            return 2.30;
-        }
-        else if(grade.equals("C")){
-            return 2.00;
-        }
-        else if(grade.equals("C-")){
-            return 1.70;
-        }
-        else if(grade.equals("D+")){
-            return 1.30;
-        }
-        else if(grade.equals("D")){
-            return 1.00;
-        }
-        else if(grade.equals("D-")){
-            return 0.70;
-        }
-        else if(grade.equals("F")){
-            return 0.002;
-        }
-        return (double) 0;
+        return switch (grade) {
+            case "A" -> 4.0;
+            case "A-" -> 3.70;
+            case "B+" -> 3.30;
+            case "B" -> 3.00;
+            case "B-" -> 2.70;
+            case "C+" -> 2.30;
+            case "C" -> 2.00;
+            case "C-" -> 1.70;
+            case "D+" -> 1.30;
+            case "D" -> 1.00;
+            case "D-" -> 0.70;
+            case "F" -> 0.000;
+            default -> (double) 0;
+        };
     }
 
-    public void setGrade(String grade ) {
+    public void setGrade(String grade) {
         this.grade = grade;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public void setCredit(int credit) {
+        this.credit = credit;
     }
 }
 
