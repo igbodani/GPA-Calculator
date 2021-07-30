@@ -1,6 +1,6 @@
 package edu.isu.cs.student.project;
 
-public class Course{
+public class Course {
     private String name;
     private int credit;
     private String grade;
@@ -37,16 +37,12 @@ public class Course{
         };
     }
 
-    public void setGrade(String grade) {
-        this.grade = grade;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setCredit(int credit) {
-        this.credit = credit;
+    @Override
+    public String toString() {
+        return "Course{" +
+                "name='" + name + '\'' +
+                ", credit=" + credit +
+                ", grade='" + grade + '\'' +
+                '}';
     }
 }
-
